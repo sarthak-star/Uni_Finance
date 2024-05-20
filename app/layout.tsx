@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "UniFinance",
   description: "Centralised modern banking platform for all.",
   icons:{
-    icon:'../public/icons/logo.svg'
+    icon:'/icons/logo.svg'
   }
 };
 
