@@ -10,12 +10,11 @@ declare type SearchParamProps = {
 declare type SignUpParams = {
   firstName: string;
   lastName: string;
-  address1: string;
+  address: string;
   city: string;
   state: string;
   postalCode: string;
   dateOfBirth: string;
-  ssn: string;
   email: string;
   password: string;
 };
@@ -29,16 +28,15 @@ declare type User = {
   $id: string;
   email: string;
   userId: string;
-  dwollaCustomerUrl: string;
-  dwollaCustomerId: string;
+  stripeCustomerId: string;
   firstName: string;
   lastName: string;
-  address1: string;
+  address: string;
   city: string;
   state: string;
   postalCode: string;
   dateOfBirth: string;
-  ssn: string;
+  
 };
 
 declare type NewUserParams = {
@@ -114,26 +112,25 @@ declare type Receiver = {
 declare type TransferParams = {
   sourceFundingSourceUrl: string;
   destinationFundingSourceUrl: string;
-  amount: string;
+  amount: number;
 };
 
 declare type AddFundingSourceParams = {
-  dwollaCustomerId: string;
+  stripeCustomerId: string;
   processorToken: string;
   bankName: string;
 };
 
-declare type NewDwollaCustomerParams = {
+declare type NewStipeCustomerParams = {
   firstName: string;
   lastName: string;
   email: string;
   type: string;
-  address1: string;
+  address: string;
   city: string;
   state: string;
   postalCode: string;
   dateOfBirth: string;
-  ssn: string;
 };
 
 declare interface CreditCardProps {
@@ -210,6 +207,7 @@ declare interface TotlaBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: 'mobile' | 'desktop'
 }
 
 declare interface RightSidebarProps {
